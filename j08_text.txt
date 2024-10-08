@@ -1,0 +1,32 @@
+Start with two arrays of strings, a and b, each in alphabetical order, possibly with duplicates. Return the count of the number of strings which appear in both arrays. The best "linear" solution makes a single pass over both arrays, taking advantage of the fact that they are in alphabetical order.
+
+
+commonTwo(["a", "c", "x"], ["b", "c", "d", "x"]) → 2
+commonTwo(["a", "c", "x"], ["a", "b", "c", "x", "z"]) → 3
+commonTwo(["a", "b", "c"], ["a", "b", "c"]) → 3
+public int commonTwo(String[] a, String[] b) {
+   TreeSet<String> seta = new TreeSet<>();
+   // copy a to TreeSet seta 
+   for(int i=0;i<a.length;i++){
+    seta.add(a[i]);
+   }
+  TreeSet<String> setb = new TreeSet<>();
+   // copy b to TreeSet setb 
+   for(int i=0;i<b.length;i++){
+    setb.add(b[i]);
+   } 
+    int count = 0; // To count common unique elements
+
+        // Iterate over the smaller set to reduce lookups
+        for (String s : seta) {
+            if (setb.contains(s)) {
+                count++; // Found a common unique string
+            }
+        }
+
+        return count; // Return the count of unique common strings
+   
+   
+   
+  
+}
