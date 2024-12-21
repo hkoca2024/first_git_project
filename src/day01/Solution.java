@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
-        int []  arr={1,3,4,5};
+        int []  arr={1,2,3,5};
 
                 Arrays.sort(arr);
                 int n=arr[arr.length-1];
